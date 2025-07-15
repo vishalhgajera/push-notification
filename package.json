@@ -11,9 +11,8 @@
     "android-release": "expo run:android --variant release",
     "web": "expo start --web",
     "lint": "expo lint",
-
-    "configure":"eas build:configure",
-    "dev":"eas build --profile development",
+    "configure": "eas build:configure",
+    "dev": "eas build --profile development",
     "prod": "eas build"
   },
   "dependencies": {
@@ -24,7 +23,10 @@
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.5",
-    "expo-dev-client": "~5.2.4"
+    "expo-dev-client": "~5.2.4",
+    "react-dom": "19.0.0",
+    "react-native-web": "^0.20.0",
+    "@expo/metro-runtime": "~5.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
