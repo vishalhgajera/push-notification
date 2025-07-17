@@ -6,16 +6,69 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "API_URL": "https://dev.api.com",
+        "GOOGLE_SERVICES_JSON": "./google-services.json"
+      },
+      "cache": {
+        "key": "dev-cache-key"
+      },
+      "resourceClass": "medium",
+      "channel": "development"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "enterpriseProvisioning": "adhoc"
+      },
+      "env": {
+        "API_URL": "https://preview.api.com",
+        "GOOGLE_SERVICES_JSON": "./google-services.json"
+      },
+      "autoIncrement": true,
+      "resourceClass": "medium",
+      "channel": "preview"
     },
     "production": {
-      "autoIncrement": true
+      "distribution": "store",
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "enterpriseProvisioning": "universal"
+      },
+      "env": {
+        "API_URL": "https://api.com",
+        "GOOGLE_SERVICES_JSON": "./google-services.json"
+      },
+      "autoIncrement": true,
+      "resourceClass": "large",
+      "channel": "production"
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./keys/android-service-account.json",
+        "track": "production",
+        "changesNotSentForReview": false
+      },
+      "ios": {
+        "appleId": "your-apple-id@example.com",
+        "ascAppId": "1234567890",
+        "appleTeamId": "YOUR_TEAM_ID"
+      }
+    }
   }
 }

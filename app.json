@@ -39,6 +39,12 @@
         "projectId": "800b8df3-b3c1-4975-98cf-87a671b1859c"
       }
     },
-    "owner": "vishal_gajera"
+    "owner": "vishal_gajera",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/800b8df3-b3c1-4975-98cf-87a671b1859c"
+    }
   }
 }
